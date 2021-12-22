@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.14.0/babel.min.js"></script>
+    <script type="text/babel" data-presets="es2017, stage-3" data-plugins="syntax-async-functions,transform-class-properties"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="js/neutralino.js"></script>
+<script src="js/setup.js"></script>
+<script type="text/babel" src="./components/App.jsx"></script>
+<script type="text/babel" >
+ReactDOM.render(<App/>, document.getElementById('app'))
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+/bin
+/dist
+neutralino.js
+.storage
+*.log
+.tmp/

@@ -1,0 +1,10 @@
+{
+  "name": "gvoicetray",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "npx -y @neutralinojs/neu run",
+    "build": "npx -y @neutralinojs/neu build -r"
+  },
+  "author": "David Konsumer <konsumer@jetboystudio.com>",
+  "license": "MIT"
+}
