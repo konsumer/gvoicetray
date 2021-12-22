@@ -33,5 +33,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./dist/gvoicetray-release.zip
-          asset_name: gvoicetray-${GITHUB_REF}.zip
+          asset_name: gvoicetray-${{ github.ref }}.zip
           asset_content_type: application/zip
