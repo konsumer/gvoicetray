@@ -1,6 +1,6 @@
 {
   "name": "gvoicetray",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "npx -y @neutralinojs/neu run",
     "build": "npx -y @neutralinojs/neu build -r"
