@@ -4,18 +4,14 @@
 // TODO: Fix https://github.com/neutralinojs/neutralinojs/issues/615
 if (NL_OS !== 'Darwin') {
   Neutralino.os.setTray({
-    icon: '/resources/icons/trayIcon.png',
+    icon: '/resources/icons/appIcon.png',
     menuItems: [
-      { id: 'VERSION', text: 'About' },
-      { id: 'SEND', text: 'Send Message' },
+      { id: 'SHOW', text: 'Show' },
       { id: 'SEP', text: '-' },
+      { id: 'VERSION', text: 'About' },
       { id: 'QUIT', text: 'Quit' }
     ]
   })
-}
-
-function checkMessages () {
-  Neutralino.debug.log('Check messages not implemented.')
 }
 
 function onTrayMenuItemClicked (event) {
@@ -31,6 +27,10 @@ function onTrayMenuItemClicked (event) {
       Neutralino.app.exit()
       break
 
+    case 'SHOW':
+      showVoice()
+      break
+
     default:
       Neutralino.debug.log(`${event.detail.id} not implemented.`)
       Neutralino.os.showMessageBox(
@@ -41,13 +41,23 @@ function onTrayMenuItemClicked (event) {
 }
 
 function onWindowClose () {
-  Neutralino.app.exit()
+  // Neutralino.app.exit()
+  Neutralino.window.hide()
 }
 
 Neutralino.init()
 Neutralino.events.on('trayMenuItemClicked', onTrayMenuItemClicked)
 Neutralino.events.on('windowClose', onWindowClose)
 
-// every 10 second, check for new messages
-setInterval(checkMessages, 10000)
-checkMessages()
+function showVoice () {
+  return Neutralino.window.create('https://voice.google.com/u/0/messages', {
+    icon: '/resources/icons/appIcon.png',
+    enableInspector: false,
+    width: 300,
+    height: 800,
+    maximizable: false,
+    exitProcessOnClose: true,
+    hidden: false,
+    processArgs: '--window-id=W_VOICE'
+  })
+}
