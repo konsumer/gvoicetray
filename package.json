@@ -3,7 +3,7 @@
   "version": "0.0.6",
   "private": true,
   "scripts": {
-    "start": "npx -y @neutralinojs/neu run",
+    "start": "npx -y @neutralinojs/neu run --mode chrome",
     "build": "npx -y @neutralinojs/neu build -r"
   },
   "author": "David Konsumer <konsumer@jetboystudio.com>",
